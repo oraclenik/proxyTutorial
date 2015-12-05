@@ -22,12 +22,12 @@ $ sudo pip install shadowsocks
 ```bash
 $ sslocal -s “server” -k password -t 600 -p port  -l 1080 -m encryption
 ```
-<p lang="fa" dir="rtl" align="right">به جای "server" آی‌پی یا آدرس سرور، به جای "password" پسورد و جای "port" پورت، جای "encryption" انکریپشن سرویس رو وارد کنید و به جای "local port" پورت لوکال سیستم که خودتون تایینش میکنید. بعد از تونل رو سیستم شما ایجاد میشه و باید به مرحله رد کردن ترافیک از تونل برید.</p>
+<p lang="fa" dir="rtl" align="right">به جای "server" آی‌پی یا آدرس سرور، به جای "password" پسورد و جای "port" پورت، جای "encryption" انکریپشن سرویس رو وارد کنید و به جای "local port" پورت لوکال سیستم که خودتون تایینش میکنید. بعد تونل رو سیستم شما ایجاد میشه و باید به مرحله رد کردن ترافیک از تونل برید.</p>
 
 <p lang="fa" dir="rtl" align="right">میشه دستورات بالا رو تو یه فایل به این شکل ذخیره کرد</p>
 ```json
 {
-        "server": "sever addr",
+	"server": "sever addr",
         "server_port": port,
         "local_port": 1080,
         "password": "password",
@@ -44,19 +44,27 @@ $ sslocal -c path_file
 ```
 <p lang="fa" dir="rtl" align="right">شدو ساکس در پورت‌های مختلف و انکریپشن‌های متفاوت سرعت‌های مختلفی میده فرود در این زمینه اطلاعات دقیق و کاملی داره</p>
 <h2 lang="fa" dir="rtl" align="right">تونل با کمک ssh</h2>
-نمی‌دونم اسم این تونل چیه ولی ازش استفاده میکنم
-اگر دسترسی ssh به یک سرور دارید می‌تونید به این طریق یک تونل رو سیستم خودتون ایجاد کنید
+<p lang="fa" dir="rtl" align="right">نمی‌دونم اسم این تونل چیه ولی ازش استفاده میکنم
+اگر دسترسی ssh به یک سرور دارید می‌تونید به این طریق یک تونل رو سیستم خودتون ایجاد کنید</p>
+```bash
 $ ssh user@server.address -D 1080
-به این طریق یک تونل رو پورت ۱۰۸۰ سیستمتون ایجاد میشه
-تونل با کمک tor
+```
+<p lang="fa" dir="rtl" align="right">به این طریق یک تونل رو پورت ۱۰۸۰ سیستمتون ایجاد میشه</p>
+<h2 lang="fa" dir="rtl" align="right">تونل با کمک tor</h2>
+<p lang="fa" dir="rtl" align="right">تور یکی از امن ترین شبکه‌های دنیاست</p>
+```bash
 $ sudo apt install tor
 $ sudo apt install python-pip
 $ sudo apt install python-dev gcc
 $ sudo pip install obfsproxy
-تنظیمات تور رو باید انجام بدید
+```
+<p lang="fa" dir="rtl" align="right">سپس تنظیمات تور رو باید انجام بدید</p>
+```bash
 $ sudo nano /etc/tor/torrc
-موارد زیر رو به انتهای فایل اضافه کنید
-با کنترل + c می‌تونید و انتخاب y میتونید تغییرات رو ذخیره کنید
+```
+<p lang="fa" dir="rtl" align="right">موارد زیر رو به انتهای فایل اضافه کنید
+با کنترل + c می‌تونید و انتخاب y میتونید تغییرات رو ذخیره کنید</p>
+```bash
 SocksPort 1080
 SocksListenAddress 127.0.0.1
 Bridge obfs3 194.132.209.187:39413
@@ -64,10 +72,13 @@ Bridge obfs3 194.68.32.131:56006
 Bridge obfs3 107.191.58.23:34344
 UseBridges 1
 ClientTransportPlugin obfs2,obfs3 exec /usr/local/bin/obfsproxy --managed
-تعدادی از پل‌های تور هم در این تنظیمات هستند، پل‌ها ممکن است بسته شوند از https://bridges.torproject.org می‌تونید پل‌های جدید بگیرید و با موارد بالا جایگزین کنید
-سپس با دستور زیر تور را دوباره راه‌اندازی کنید
+```
+<p lang="fa" dir="rtl" align="right">تعدادی از پل‌های تور هم در این تنظیمات هستند، پل‌ها ممکن است بسته شوند از https://bridges.torproject.org می‌تونید پل‌های جدید بگیرید و با موارد بالا جایگزین کنید</p>
+<p lang="fa" dir="rtl" align="right">بعد ذخیره تنظیمات با دستور زیر تور را دوباره راه‌اندازی کنید</p>
+```bash
 $ sudo service tor restart
-حالا تونل در سیستم شما اجرا شده و لازمه ترافیک رو ازش رد کنید
+```
+<p lang="fa" dir="rtl" align="right">حالا تونل در سیستم شما اجرا شده و لازمه ترافیک رو ازش رد کنید</p>
 ساخت تونل با yourfreedom
 باید قبلش برید تو سایتش ثبت‌نام کنید از قسمت دانلود نسخه جوا دانلود کنید از حالت فرشده خارج کنید
 با cd به محل اکسترکت شده برید و دستور زیر رو وارد کنید
