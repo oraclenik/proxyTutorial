@@ -21,6 +21,7 @@ $ sudo pip install shadowsocks
 <p lang="fa" dir="rtl" align="right">الان شدو ساکس رو سیستم شما نصب شده و با دستور زیر میتونید یک تونل رو سیستم خودتون ایجاد کنید.</p>
 ```bash
 $ sslocal -s “server” -k password -t 600 -p port  -l 1080 -m encryption
+```
 <p lang="fa" dir="rtl" align="right">به جای "server" آی‌پی یا آدرس سرور، به جای "password" پسورد و جای "port" پورت، جای "encryption" انکریپشن سرویس رو وارد کنید و به جای "local port" پورت لوکال سیستم که خودتون تایینش میکنید. بعد از تونل رو سیستم شما ایجاد میشه و باید به مرحله رد کردن ترافیک از تونل برید.</p>
 
 <p lang="fa" dir="rtl" align="right">میشه دستورات بالا رو تو یه فایل به این شکل ذخیره کرد</p>
