@@ -88,3 +88,14 @@ java -jar freedom.jar
 بعد از پیدا شدن سرورها یکیش رو انتخاب کنید و نکست
 یوزر پسورد اکانتتون رو وارد کنید دخیره کنید و بیاید بیرون
 استارت کانکشن رو بزنید بعد از چند ثانیه ارتباط برقرار میشه</p>
+
+<h2 lang="fa" dir="rtl" align="right">openvpn</h2>
+<p lang="fa" dir="rtl" align="right">از openvpn هم میشه در لینوکس استفاده کرد اول نصبش کنید</p>
+```bash
+$ sudo apt install openvpn
+```
+<p lang="fa" dir="rtl" align="right">فایل کانفیگ openvpn رو دانلود کنید و به این طریق وصل شید</p>
+```bash
+$ sudo openvpn filename
+```
+<p lang="fa" dir="rtl" align="right">با اجرا این دستور کل ترافیک شما میره سمت سرور و لازم نیست پراکسی جایی ست کنید در نتیجه تمام تنظیمات پراسی‌هاتون رو مستقیم کنید.</p>
