@@ -13,10 +13,55 @@
 <p lang="fa" dir="rtl" align="right">شدو ساکس یکی از راه‌های ساخت تونل هست لازمه شما یه سرور در خارج از ایران داشته باشید از سیستم خودتون بهش وصل بشید
 سمت سرور رو فکر نکنم لازم باشه بگم چون تصورم اینه که اگر سرور داشته باشید می‌تونید شدو ساکس رو هم نصب کنید ولی اگر خواستید اضافش میکنم.</p>
 ```bash
-$ sudo apt install libevent-dev
+$ sudo apt insta
+
+<p lang="fa" dir="rtl" align="right">الان شدو ساکس رو سیستم شما نصب شده و با دستور زیر میتونید یک تونل رو سیستم خودتون ایجاد کنید.</p>
+```bash
+$ sslocal -s “server” -k password -t 600 -p port  -l 1080 -m encryption
+```
+<p lang="fa" dir="rtl" align="right">به جای "server" آی‌پی یا آدرس سرور، به جای "password" پسورد و جای "port" پورت، جای "encryption" انکریپشن سرویس رو وارد کنید و به جای "local port" پورت لوکال سیستم که خودتون تایینش میکنید. بعد تونل رو سیستم شما ایجاد میشه و باید به مرحله رد کردن ترافیک از تونل برید.</p>
+
+<p lang="fa" dir="rtl" align="right">میشه دستورات بالا رو تو یه فایل به این شکل ذخیره کرد</p>
+```json
+{
+	"server": "sever addr",
+        "server_port": port,
+        "local_port": 1080,
+        "password": "password",
+        "timeout":600,
+        "method":"aes-256-cfb"
+}
+```
+<p lang="fa" dir="rtl" align="right">و دستور رو اینجوری زد</p>
+```bash
+$ sslocal -c path_file
+```
+<p lang="fa" dir="rtl" align="right">شدو ساکس در پورت‌های مختلف و انکریپشن‌های متفاوت سرعت‌های مختلفی میده فرود در این زمینه اطلاعات دقیق و کاملی داره</p>ll libevent-dev
 $ sudo apt install python-pip
 $ sudo apt install python-dev
 $ sudo apt install python-m2crypto
 $ sudo pip install gevent
 $ sudo pip install shadowsocks
 ```
+<p lang="fa" dir="rtl" align="right">الان شدو ساکس رو سیستم شما نصب شده و با دستور زیر میتونید یک تونل رو سیستم خودتون ایجاد کنید.</p>
+```bash
+$ sslocal -s “server” -k password -t 600 -p port  -l 1080 -m encryption
+```
+<p lang="fa" dir="rtl" align="right">به جای "server" آی‌پی یا آدرس سرور، به جای "password" پسورد و جای "port" پورت، جای "encryption" انکریپشن سرویس رو وارد کنید و به جای "local port" پورت لوکال سیستم که خودتون تایینش میکنید. بعد تونل رو سیستم شما ایجاد میشه و باید به مرحله رد کردن ترافیک از تونل برید.</p>
+
+<p lang="fa" dir="rtl" align="right">میشه دستورات بالا رو تو یه فایل به این شکل ذخیره کرد</p>
+```json
+{
+	"server": "sever addr",
+        "server_port": port,
+        "local_port": 1080,
+        "password": "password",
+        "timeout":600,
+        "method":"aes-256-cfb"
+}
+```
+<p lang="fa" dir="rtl" align="right">و دستور رو اینجوری زد</p>
+```bash
+$ sslocal -c path_file
+```
+<p lang="fa" dir="rtl" align="right">شدو ساکس در پورت‌های مختلف و انکریپشن‌های متفاوت سرعت‌های مختلفی میده فرود در این زمینه اطلاعات دقیق و کاملی داره</p>
