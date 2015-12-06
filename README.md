@@ -154,3 +154,6 @@ socksProxyType = socks5
 $ sudo nano /etc/polipo/config
 ```
 <p lang="fa" dir="rtl" align="right">اضافه کنید با کنترل + c و انتخاب y تغییرات رو ذخیره کنیدو بعدش Polipo رو ری‌استارت کنید</p>
+```bash
+$ sudo service polipo restart
+```
