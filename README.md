@@ -46,3 +46,32 @@ $ sslocal -c path_file
 $ ssh user@server.address -D 1080
 ```
 <p lang="fa" dir="rtl" align="right">به این طریق یک تونل رو پورت ۱۰۸۰ سیستمتون ایجاد میشه</p>
+<h2 lang="fa" dir="rtl" align="right">تونل با کمک tor</h2>
+<p lang="fa" dir="rtl" align="right">تور یکی از امن ترین شبکه‌های دنیاست</p>
+```bash
+$ sudo apt install tor
+$ sudo apt install python-pip
+$ sudo apt install python-dev gcc
+$ sudo pip install obfsproxy
+```
+<p lang="fa" dir="rtl" align="right">سپس تنظیمات تور رو باید انجام بدید</p>
+```bash
+$ sudo nano /etc/tor/torrc
+```
+<p lang="fa" dir="rtl" align="right">موارد زیر رو به انتهای فایل اضافه کنید
+با کنترل + c می‌تونید و انتخاب y میتونید تغییرات رو ذخیره کنید</p>
+```bash
+SocksPort 1080
+SocksListenAddress 127.0.0.1
+Bridge obfs3 194.132.209.187:39413
+Bridge obfs3 194.68.32.131:56006
+Bridge obfs3 107.191.58.23:34344
+UseBridges 1
+ClientTransportPlugin obfs2,obfs3 exec /usr/local/bin/obfsproxy --managed
+```
+<p lang="fa" dir="rtl" align="right">تعدادی از پل‌های تور هم در این تنظیمات هستند، پل‌ها ممکن است بسته شوند از https://bridges.torproject.org می‌تونید پل‌های جدید بگیرید و با موارد بالا جایگزین کنید</p>
+<p lang="fa" dir="rtl" align="right">بعد ذخیره تنظیمات با دستور زیر تور را دوباره راه‌اندازی کنید</p>
+```bash
+$ sudo service tor restart
+```
+<p lang="fa" dir="rtl" align="right">حالا تونل در سیستم شما اجرا شده و لازمه ترافیک رو ازش رد کنید</p>
