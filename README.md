@@ -77,8 +77,8 @@ $ sudo service tor restart
 <p lang="fa" dir="rtl" align="right">حالا تونل در سیستم شما اجرا شده و لازمه ترافیک رو ازش رد کنید</p>
 
 <h2 lang="fa" dir="rtl" align="right">ساخت تونل با yourfreedom</h2>
-<p lang="fa" dir="rtl" align="right">باید قبلش برید تو سایتش ثبت‌نام کنید از قسمت دانلود نسخه جوا دانلود کنید از حالت فرشده خارج کنید
-با cd به محل اکسترکت شده برید و دستور زیر رو وارد کنید<p lang="fa" dir="rtl" align="right">
+<p lang="fa" dir="rtl" align="right">باید قبلش برید تو سایتش ثبت‌نام کنید از قسمت دانلود نسخه جاوا دانلود کنید از حالت فرشده خارج کنید
+با cd به محل اکسترکت شده برید و دستور زیر رو وارد کنید</p>
 ```bash
 java -jar freedom.jar
 ```
