@@ -39,3 +39,10 @@ $ sslocal -s “server” -k password -t 600 -p port  -l 1080 -m encryption
 $ sslocal -c path_file
 ```
 <p lang="fa" dir="rtl" align="right">شدو ساکس در پورت‌های مختلف و انکریپشن‌های متفاوت سرعت‌های مختلفی میده فرود در این زمینه اطلاعات دقیق و کاملی داره</p>
+<h2 lang="fa" dir="rtl" align="right">تونل با کمک ssh</h2>
+<p lang="fa" dir="rtl" align="right">نمی‌دونم اسم این تونل چیه ولی ازش استفاده میکنم
+اگر دسترسی ssh به یک سرور دارید می‌تونید به این طریق یک تونل رو سیستم خودتون ایجاد کنید</p>
+```bash
+$ ssh user@server.address -D 1080
+```
+<p lang="fa" dir="rtl" align="right">به این طریق یک تونل رو پورت ۱۰۸۰ سیستمتون ایجاد میشه</p>
