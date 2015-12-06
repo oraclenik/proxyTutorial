@@ -153,9 +153,3 @@ socksProxyType = socks5
 ```bash
 $ sudo nano /etc/polipo/config
 ```
-<p lang="fa" dir="rtl" align="right">اضافه کنید با کنترل + c و انتخاب y تغییرات رو ذخیره کنیدو بعدش Polipo رو ری‌استارت کنید</p>
-```bash
-$ sudo service polipo restart
-```
-<p lang="fa" dir="rtl" align="right">حالا یه پراکسی دیگه هم رو سیستم داریم همون آی‌پی 127.0.0.1 ولی رو پورت 8123 و از نوع http که به راحتی می‌تونید رو همه سیستم‌ها از جمله اندروید استادیو اضافش کنید
-</p>
