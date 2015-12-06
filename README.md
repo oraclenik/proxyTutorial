@@ -138,23 +138,3 @@ socks5  127.0.0.1 1080
 <p lang="fa" dir="rtl" align="right">خوب حالا می‌تونید با زدن proxychains اول هر دستوری ترافیکش رو از تونل رد کنید.
 نکته اگر می‌خواید سیستم تون رو آپدیت کنید اول sudo -s و بعدش proxychains apt update</p>
 
-<h2 lang="fa" dir="rtl" align="right">تبدیل socks5 به http</h2>
-<p lang="fa" dir="rtl" align="right">هنوز یه مشکلی هست بعضی از برنامه‌ها تو تنظیمات پراکسیشون  socks5 ندارند مثل اندروید استادیو و sdk! در نتیجه نمیشه sdk رو آپدیت کرد چون گوگل تحریممون کرده بنابراین ما socks5 رو تبدیل میکنیم به http که این برنامه‌ها ازش پشتیبانی می‌کنند به کمک برنامه polipo که مثل یه شلنگ می‌مونه از یه ور socks5 میگیره از یه ور دیگه http تحویل میده</p>
-```bash
-sudo apt install polipo
-```
-<p lang="fa" dir="rtl" align="right">و بعد برای کافیگش دو خط زیر رو</p>
-```bash
-socksParentProxy = localhost:1080
-socksProxyType = socks5
-```
-<p lang="fa" dir="rtl" align="right">به انتهای فایل</p>
-```bash
-$ sudo nano /etc/polipo/config
-```
-<p lang="fa" dir="rtl" align="right">اضافه کنید با کنترل + c و انتخاب y تغییرات رو ذخیره کنیدو بعدش Polipo رو ری‌استارت کنید</p>
-```bash
-$ sudo service polipo restart
-```
-<p lang="fa" dir="rtl" align="right">حالا یه پراکسی دیگه هم رو سیستم داریم همون آی‌پی 127.0.0.1 ولی رو پورت 8123 و از نوع http که به راحتی می‌تونید رو همه سیستم‌ها از جمله اندروید استادیو اضافش کنید
-</p>
