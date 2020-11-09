@@ -206,7 +206,7 @@ HTTPTunnelPort 127.0.0.1:9080  # برای باز کردن تونل اچ تی ت�
 </div>
 
 ```bash
-$ tor
+$ tor -f torrc
 ```
 
 <div lang="fa" dir="rtl" align="right">
